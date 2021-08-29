@@ -1,0 +1,377 @@
+:root {
+    --color-dark: rgb(43, 42, 42);
+    --color-dark-cont: rgba(43, 42, 42, 0.6);
+    --color-main-bg: rgb(20,20,20);
+    --color-white: white;
+    --color-highlight: #ff4500;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-highlight);
+}
+
+p {
+    color: var(--color-white);
+    font-size: 18px;
+    line-height: 28px;
+}
+
+a,
+#menu a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+#menu a:hover {
+    color: var(--color-highlight);
+}
+
+a:active,
+#menu a:active {
+    color: red;
+}
+
+header,
+#menu a {
+    color: var(--color-white);
+}
+
+header {
+    width: 100vw;
+    padding: 20px 0px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    color: var(--color-highlight);
+}
+
+.logo > div {
+    display: flex;
+    align-items: center;
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+}
+
+main {
+    background-color: var(--color-main-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    display: flex;
+}
+
+.content-box {
+    background-color: var(--color-dark-cont);
+    color: var(--color-white);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+footer {
+    background-color: var(--color-dark);
+    width: 100vw;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer a {
+    color: var(--color-white);
+}
+
+/* Styling for computers */
+@media screen and (min-width: 500px) {
+    header {
+        background-image: url("../images/header-bg1.jpeg");
+        background-size: cover;
+        height: 150px;
+        filter: contrast(90%);
+    }
+
+    .logo {
+        width: 350px;
+        margin-left: 40px;
+        font-size: 40px;
+        justify-content: space-around;
+    }
+
+    .logo > img {
+        width: 80px;
+    }
+
+    nav {
+        background-color: var(--color-dark);
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-top: 1px solid var(--color-white);
+        border-bottom: 1px solid var(--color-white);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .fa-bars::before,
+    #burger-menu {
+        display: none;
+    }
+
+    #menu {
+        width: 400px;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    main {
+        background-image: url("../images/yelling-man.jpeg");
+        background-position: right;
+        padding: 80px;
+        box-sizing: border-box;
+        justify-content: space-around;
+    }
+
+    .index-page {
+        flex-direction: column;
+    }
+
+    .index-page > section {
+        width: 50%;
+        min-width: 350px;
+    }
+
+    .about-page {
+        flex-direction: row;
+    }
+
+    .about-page > section {
+        width: 85%;
+    }
+
+    .about-page .photo-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .about-page .photo-block div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-page .photo-block img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-page {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .social-media-lg {
+        width: 50%;
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .social-media-lg a img {
+        width: 100px;
+    }
+
+    #footer-content {
+        width: 80%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+
+    #footer-content a {
+        text-decoration: underline;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 3px 0px;
+    }
+
+    #footer-extra {
+        width: 500px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Styling for mobile */
+@media screen and (max-width: 500px) {
+    header {
+        background-color: var(--color-dark);
+        height: 80px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    .logo {
+        width: 240px;
+        font-size: 25px;
+        justify-content: space-evenly;
+        position: fixed;
+        right: 10px;
+    }
+
+    .logo > img {
+        width: 50px;
+    }
+
+    nav {
+        position: fixed;
+        top: 25px;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .fa-bars {
+        margin-left: 30px;
+    }
+
+    .fa-bars::before {
+        color: var(--color-white)
+    }
+
+    #burger-menu {
+        display: none;
+    }
+
+    #menu {
+        background-color: var(--color-dark);
+        width: 100%;
+        max-height: 0px;
+        font-size: 20px;
+        position: fixed;
+        top: 80px;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: max-height 0.6s ease;
+    }
+
+    #menu li {
+        padding: 5px;
+    }
+
+    #burger-menu:checked ~ #menu {
+        height: auto;
+        max-height: 200px;
+        padding-bottom: 5px;
+    }
+
+    main {
+        background-image: url("../images/yelling-man-mobile.jpeg");
+        background-size: 100% auto;
+        align-items: center;
+        padding-top: 100px;
+        box-sizing: border-box;
+    }
+
+    .index-page  {
+        flex-direction: column;
+    }
+
+    .about-page {
+        flex-direction: column;
+    }
+
+    .content-box {
+        width: 90%;
+        border-radius: 10px;
+        text-shadow: 3px 3px 10px black;
+    }
+
+    .about-page .content-box {
+        margin-bottom: 20px;
+    }
+
+    .about-page .photo-block {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .about-page .photo-block div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .about-page .photo-block img {
+        width: 200px;
+        height: 200px;
+        margin: 20px 0px;
+    }
+
+    .contact-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-media-lg {
+        width: 90%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .social-media-lg a img {
+        width: 60px;
+    }
+
+    #footer-content {
+        display: none;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 3px 0px;
+    }
+
+    #footer-extra {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+}
