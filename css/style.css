@@ -23,6 +23,7 @@ p {
 }
 
 a,
+.logo a,
 #menu a {
     text-decoration: none;
     transition: color 0.3s ease;
@@ -49,12 +50,12 @@ header {
     box-sizing: border-box;
 }
 
-.logo {
+.logo > a {
     display: flex;
     color: var(--color-highlight);
 }
 
-.logo > div {
+.logo > a > div {
     display: flex;
     align-items: center;
 }
@@ -103,13 +104,16 @@ footer a {
     }
 
     .logo {
-        width: 350px;
+        width: 360px;
         margin-left: 40px;
+    }
+    
+    .logo > a {
         font-size: 40px;
         justify-content: space-around;
     }
 
-    .logo > img {
+    .logo > a > img {
         width: 80px;
     }
 
@@ -391,12 +395,15 @@ footer a {
     .logo {
         width: 240px;
         font-size: 25px;
-        justify-content: space-evenly;
         position: fixed;
         right: 10px;
     }
 
-    .logo > img {
+    .logo > a {
+        justify-content: space-evenly;
+    }
+
+    .logo > a > img {
         width: 50px;
     }
 
