@@ -3,6 +3,7 @@
     --color-dark-cont: rgba(43, 42, 42, 0.6);
     --color-main-bg: rgb(20,20,20);
     --color-white: white;
+    --color-light: rgb(150, 150, 150);
     --color-highlight: #ff4500;
 }
 
@@ -67,7 +68,6 @@ main {
     background-color: var(--color-main-bg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 700px;
     display: flex;
 }
 
@@ -92,8 +92,9 @@ footer a {
     color: var(--color-white);
 }
 
-/* Styling for computers */
+/* Styling for desktop */
 @media screen and (min-width: 500px) {
+    /* Site-wide styling for desktop view */
     header {
         background-image: url("../images/header-bg1.jpeg");
         background-size: cover;
@@ -130,7 +131,7 @@ footer a {
     }
 
     #menu {
-        width: 400px;
+        width: 480px;
         font-size: 20px;
         display: flex;
         justify-content: space-around;
@@ -139,48 +140,15 @@ footer a {
 
     main {
         background-image: url("../images/yelling-man.jpeg");
-        background-position: right;
+        background-position: top right;
         padding: 80px;
         box-sizing: border-box;
         justify-content: space-around;
     }
 
-    .index-page {
-        flex-direction: column;
-    }
-
-    .index-page > section {
-        width: 50%;
-        min-width: 350px;
-    }
-
-    .about-page {
-        flex-direction: row;
-    }
-
-    .about-page > section {
-        width: 85%;
-    }
-
-    .about-page .photo-block {
+    .content-row {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .about-page .photo-block div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-page .photo-block img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .contact-page {
-        display: flex;
         justify-content: space-evenly;
     }
 
@@ -223,10 +191,195 @@ footer a {
     .mobile-only {
         display: none;
     }
+
+    .desktop-only {
+        display: flex;
+    }
+
+    /* Page specific styleing for desktop view */
+    .index-page {
+        flex-direction: column;
+    }
+
+    .index-page > section {
+        width: 50%;
+        min-width: 350px;
+    }
+
+    .about-page {
+        flex-direction: row;
+    }
+
+    .about-page > section {
+        width: 85%;
+    }
+
+    .about-page .text-block {
+        margin: 30px;
+    }
+
+    .about-page .photo-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .about-page .photo-block div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-page .photo-block img {
+        width: 200px;
+        height: 200px;
+        padding: 25px 0px;
+    }
+
+    .blog-page #blog {
+        width: 65%;
+        min-width: 300px;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .blog-page #author-bio {
+        width: 25%;
+        min-width: 200px;
+        height: 315px;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-page #author-bio img {
+        width: 200px;
+        margin-bottom: 5px;
+    }
+
+    .blog-page #author-bio p {
+        margin: 0px;
+        line-height: 30px;
+    }
+
+    .classes-page .content-box{
+        width: 85%;
+        min-width: 600px;
+    }
+
+    .classes-page .content-row {
+        margin: 15px 0px;
+    }
+
+    .classes-page .content-row h4 {
+        margin: 10px 0px;
+    }
+
+    .classes-page .row-title {
+        width: 15%;
+    }
+
+    .classes-page .row-type {
+        width: 15%
+    }
+
+    .classes-page .row-detail {
+        width: 40%
+    }
+
+    .classes-page .row-times {
+        width: 15%;
+    }
+
+    .classes-page .row-times ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .newsletter-page {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .newsletter-page .sign-up-form {
+        width: 65%;
+    }
+
+    .newsletter-page p {
+        width: 80%;
+        margin-left: 60px;
+    }
+
+    .newsletter-page form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-page .form-row {
+        width: 80%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: space-evenly;
+        margin-top: 20px;
+    }
+
+    .newsletter-page input {
+        width: 60%;
+        min-width: 150px;
+        height: 22px;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    .newsletter-page input:focus ~ label,
+    .newsletter-page input:valid ~ label {
+        margin-left: 30px;
+    }
+
+    .newsletter-page label {
+        transition: all 0.3s ease;
+    }
+
+    .newsletter-page input[type="submit"] {
+        background-color: var(--color-highlight);
+        width: 120px;
+        height: 28px;
+        font-size: 16px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 5px;
+        transition: color 0.3s ease;
+        align-self: flex-end;
+    }
+
+    .newsletter-page input[type="submit"]:hover {
+        opacity: 0.9;
+    }
+
+    .contact-page .content-box{
+        width: 85%;
+    }
+
+    .contact-page .content-row {
+        flex-wrap: wrap;
+    }
+
+    .contact-page .content-row div {
+        margin: 0px 30px;
+    }
+
+    .contact-page .content-row div p {
+        font-size: 14px;
+    }
 }
 
 /* Styling for mobile */
 @media screen and (max-width: 500px) {
+    /* Site-wide styling for mobile view */
     header {
         background-color: var(--color-dark);
         height: 80px;
@@ -300,51 +453,25 @@ footer a {
         box-sizing: border-box;
     }
 
-    .index-page  {
-        flex-direction: column;
-    }
-
-    .about-page {
+    .page {
         flex-direction: column;
     }
 
     .content-box {
         width: 90%;
+        margin-bottom: 20px;
         border-radius: 10px;
         text-shadow: 3px 3px 10px black;
     }
 
-    .about-page .content-box {
-        margin-bottom: 20px;
-    }
-
-    .about-page .photo-block {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-    }
-
-    .about-page .photo-block div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .about-page .photo-block img {
-        width: 200px;
-        height: 200px;
-        margin: 20px 0px;
-    }
-
-    .contact-page {
+    .content-row {
         display: flex;
         flex-direction: column;
     }
 
     .social-media-lg {
         width: 90%;
-        margin-top: 40px;
+        margin: 40px 0px;
         display: flex;
         justify-content: space-evenly;
     }
@@ -374,4 +501,107 @@ footer a {
     .mobile-only {
         display: flex;
     }
+
+    .desktop-only {
+        display: none;
+    }
+
+    /* Page specific styling for mobile view */
+    .about-page .photo-block {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .about-page .photo-block div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .about-page .photo-block img {
+        width: 200px;
+        height: 200px;
+        margin: 20px 0px;
+    }
+
+    .blog-page #blog {
+        width: 90%;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .blog-page #author-bio {
+        width: 90%;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-page #author-bio img {
+        width: 200px;
+        margin-bottom: 5px;
+    }
+
+    .blog-page #author-bio p {
+        margin: 0px;
+        line-height: 30px;
+    }
+
+    .classes-page .content-row {
+        margin: 20px 0px;
+    }
+
+    .classes-page .content-row span {
+        margin: 4px 0px;
+    }
+
+    .classes-page .row-title {
+        color: var(--color-highlight);
+    }
+
+    .classes-page .row-times ul {
+        list-style: none;
+        margin: 0px;
+    }
+
+    .newsletter-page form,
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .newsletter-page input {
+        height: 22px;
+    }
+
+    .newsletter-page input:focus ~ label,
+    .newsletter-page input:valid ~ label {
+        top: -48px;
+        left: 0px;
+        color: var(--color-white);
+    }
+
+    .newsletter-page label {
+        position: relative;
+        top: -23px;
+        left: 8px;
+        color: var(--color-dark);
+        text-shadow: none;
+        transition: all 0.2s ease;
+    }
+
+    .newsletter-page input[type="submit"] {
+        background-color: var(--color-highlight);
+        height: 28px;
+        font-size: 16px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 5px;
+    }
+
 }
