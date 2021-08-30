@@ -1,5 +1,3 @@
-
-
 document.onload = fetchComponents()
 
 function fetchComponents(){

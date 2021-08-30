@@ -327,7 +327,6 @@ footer a {
         width: 80%;
         display: flex;
         flex-direction: column-reverse;
-        align-items: space-evenly;
         margin-top: 20px;
     }
 
@@ -378,6 +377,7 @@ footer a {
 
     .contact-page .content-row div p {
         font-size: 14px;
+        line-height: 20px;
     }
 }
 
@@ -562,7 +562,7 @@ footer a {
         margin: 20px 0px;
     }
 
-    .classes-page .content-row span {
+    .classes-page .content-row div {
         margin: 4px 0px;
     }
 
@@ -609,6 +609,20 @@ footer a {
         color: var(--color-white);
         border: none;
         border-radius: 5px;
+    }
+
+    .contact-page .content-row p {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0px 0px;
+    }
+
+    .contact-page .content-row h4 {
+        margin: 10px 0px;
+    }
+
+    .contact-page .content-row div {
+        margin-bottom: 10px;
     }
 
 }
