@@ -16,7 +16,7 @@ h1, h2, h3, h4 {
     color: var(--color-highlight);
 }
 
-p {
+p, figcaption {
     color: var(--color-white);
     font-size: 18px;
     line-height: 28px;
@@ -48,6 +48,14 @@ header {
     width: 100vw;
     padding: 20px 0px;
     box-sizing: border-box;
+}
+
+header:hover .logo {
+    filter: drop-shadow(0 0 15px var(--color-highlight));
+}
+
+.logo {
+    transition: all 0.3s ease;
 }
 
 .logo > a {
@@ -94,13 +102,31 @@ footer a {
 }
 
 /* Styling for desktop */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 420px) {
     /* Site-wide styling for desktop view */
     header {
+        height: 150px;
+        z-index: 1;
+    }
+
+    header::after{
+        content: '';
+        position: relative;
+        display: inline-block;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 150px;
+        margin-top: -100px;
         background-image: url("../images/header-bg1.jpeg");
         background-size: cover;
-        height: 150px;
-        filter: contrast(90%);
+        z-index: -1;
+        filter: blur(2px);
+        transition: all 0.3s ease;
+    }
+
+    header:hover::after {
+        filter: blur(3px) contrast(0.92);
     }
 
     .logo {
@@ -200,7 +226,7 @@ footer a {
         display: flex;
     }
 
-    /* Page specific styleing for desktop view */
+    /* Page specific styling for desktop view */
     .index-page {
         flex-direction: column;
     }
@@ -215,6 +241,7 @@ footer a {
     }
 
     .about-page > section {
+        min-width: 600px;
         width: 85%;
     }
 
@@ -261,11 +288,6 @@ footer a {
     .blog-page #author-bio img {
         width: 200px;
         margin-bottom: 5px;
-    }
-
-    .blog-page #author-bio p {
-        margin: 0px;
-        line-height: 30px;
     }
 
     .classes-page .content-box{
@@ -382,7 +404,7 @@ footer a {
 }
 
 /* Styling for mobile */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 420px) {
     /* Site-wide styling for mobile view */
     header {
         background-color: var(--color-dark);
@@ -551,11 +573,6 @@ footer a {
     .blog-page #author-bio img {
         width: 200px;
         margin-bottom: 5px;
-    }
-
-    .blog-page #author-bio p {
-        margin: 0px;
-        line-height: 30px;
     }
 
     .classes-page .content-row {
