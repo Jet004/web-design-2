@@ -194,10 +194,10 @@ footer a {
     }
 
     #footer-content {
-        width: 80%;
+        width: 90%;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         margin-top: 20px;
     }
 
@@ -639,7 +639,9 @@ footer a {
     }
 
     .contact-page .content-row div {
+        width: 80%;
         margin-bottom: 10px;
+        align-self: center;
     }
 
 }
